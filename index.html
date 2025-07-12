@@ -132,33 +132,31 @@
     }
 
     /* Слайдер */
- .slider {
-  width: 100vw;
-  height: 480px; /* Или сколько нужно */
-  margin: 48px auto;
-  position: relative;
+.slider {
+  width: 100%;
   overflow: hidden;
-  border-radius: 0; /* убери скругление, если нужно full-width */
-  box-shadow: none; /* можешь вернуть, если хочешь */
+  position: relative;
+  height: 480px;
 }
 
 .slides {
   display: flex;
-  height: 100%;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 
 .slide {
   position: relative;
-  width: 100%;
-  height: 480px; /* или другую фиксированную высоту */
+  min-width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* или contain — если хочешь всё изображение */
+  object-fit: cover;
 }
 
 .slide-content {
@@ -166,23 +164,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #fff;
   text-align: center;
+  background: rgba(0, 0, 0, 0.4);
   padding: 20px;
+  border-radius: 10px;
   max-width: 80%;
-  background: rgba(0, 0, 0, 0.4); /* затемнение подложки */
-  border-radius: 12px;
 }
 
-.slide-content h3 {
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
-
-.slide-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
 
 
     .slider-nav {
