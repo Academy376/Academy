@@ -112,12 +112,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: #1a202c; /* изменено на цвет текста как в "Our Mission" */
-      text-align: left; /* подравнивание как в блоке "Our Mission" */
-      background: none; /* убрал фон */
-      padding: 0;
-      border-radius: 0;
+      color: #1a202c; /* цвет текста */
+      text-align: left;
+      background: rgba(255, 255, 255, 0.75); /* добавлен полупрозрачный светлый фон */
+      padding: 24px 32px; /* добавлены отступы */
+      border-radius: 12px; /* скругления */
       max-width: 700px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1); /* тень для контраста */
     }
 
     /* Увеличение размера текста в слайдере */
@@ -421,50 +422,4 @@ Our comprehensive and integrated solutions span national security, domestic and 
   </section>
 
   <footer>
-    © 2025 Academy. All rights reserved.
-  </footer>
-
-  <script>
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-      threshold: 0.2,
-      rootMargin: "0px 0px -100px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-
-    const slides = document.getElementById('slides');
-    const slideCount = slides.children.length;
-    let index = 0;
-
-    const showSlide = (idx) => {
-      if (idx < 0) idx = slideCount - 1;
-      if (idx >= slideCount) idx = 0;
-      slides.style.transform = `translateX(-${idx * 100}%)`;
-      index = idx;
-    };
-
-    document.getElementById('prev').addEventListener('click', () => {
-      showSlide(index - 1);
-    });
-
-    document.getElementById('next').addEventListener('click', () => {
-      showSlide(index + 1);
-    });
-
-    setInterval(() => {
-      showSlide(index + 1);
-    }, 6000);
-  </script>
-</body>
-</html>
+    © 2025 Academy
