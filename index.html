@@ -2,133 +2,320 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Academy — Who We Are</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --bg: #0f1115;
-      --primary: #1f1f25;
-      --accent: #2d9cdb;
-      --text: #f0f0f0;
-      --subtext: #aaaaaa;
-    }
-
+    /* Сброс */
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      transition: all 0.3s ease;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #1a202c;
       line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     header {
-      background: var(--primary);
-      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 48px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #0c3c60;
+      letter-spacing: 1px;
+    }
+
+    nav {
       display: flex;
-      justify-content: center;
+      gap: 32px;
     }
 
     nav a {
-      color: var(--text);
-      margin: 0 15px;
-      text-decoration: none;
       font-weight: 600;
+      font-size: 1rem;
+      color: #334155;
       position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0c3c60;
     }
 
     nav a::after {
       content: "";
-      display: block;
-      height: 2px;
-      background: var(--accent);
-      width: 0;
-      transition: 0.3s;
       position: absolute;
-      bottom: -5px;
       left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background-color: #0c3c60;
+      transition: width 0.3s;
     }
 
     nav a:hover::after {
       width: 100%;
     }
 
-    section {
-      padding: 80px 20px;
-      max-width: 800px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(40px);
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: url('https://www.constellis.com/wp-content/uploads/2020/11/about-hero-bg.jpg') center center/cover no-repeat;
+      height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 48px;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
 
-    h2 {
-      color: var(--accent);
-      font-size: 2em;
+    .hero h1 {
+      font-size: 3.5rem;
+      max-width: 600px;
+      font-weight: 700;
+      line-height: 1.1;
       margin-bottom: 20px;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 10px;
     }
 
-    form input, form textarea {
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      font-weight: 400;
+    }
+
+    /* Контент секции */
+    section.content {
+      max-width: 900px;
+      margin: 64px auto;
+      padding: 0 24px;
+    }
+
+    section.content h2 {
+      font-size: 2rem;
+      color: #0c3c60;
+      margin-bottom: 24px;
+      font-weight: 700;
+      border-bottom: 3px solid #0c3c60;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    section.content p {
+      font-size: 1.125rem;
+      color: #475569;
+      margin-bottom: 16px;
+    }
+
+    /* Слайдер */
+    .slider {
+      max-width: 900px;
+      margin: 48px auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      padding: 40px 48px;
+      background: #fff;
+      box-sizing: border-box;
+      color: #1a202c;
+    }
+
+    .slide h3 {
+      font-size: 1.75rem;
+      margin-bottom: 12px;
+      color: #0c3c60;
+    }
+
+    .slide p {
+      font-size: 1rem;
+      color: #4a5568;
+      line-height: 1.5;
+    }
+
+    .slider-nav {
+      position: absolute;
+      top: 50%;
       width: 100%;
-      background: #1c1c24;
-      border: 1px solid #333;
-      border-radius: 6px;
-      padding: 12px;
-      color: var(--text);
-      margin-bottom: 15px;
-      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    .slider-nav button {
+      background: rgba(12,60,96,0.7);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 8px 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+      user-select: none;
+    }
+
+    .slider-nav button:hover {
+      background: #0c3c60;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: #fff;
+      padding: 64px 24px;
+      max-width: 900px;
+      margin: 64px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgb(0 0 0 / 0.05);
+    }
+
+    #contact h2 {
+      color: #0c3c60;
+      margin-bottom: 24px;
+      font-weight: 700;
+      border-bottom: 3px solid #0c3c60;
+      padding-bottom: 6px;
+      display: inline-block;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    form input,
+    form textarea {
+      padding: 14px 16px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #1a202c;
+      resize: vertical;
+      transition: border-color 0.3s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: #0c3c60;
+      box-shadow: 0 0 6px #0c3c60aa;
     }
 
     form button {
-      background: var(--accent);
-      color: #fff;
-      padding: 12px 24px;
+      align-self: flex-start;
+      background: #0c3c60;
+      color: white;
+      padding: 14px 32px;
+      font-weight: 700;
+      font-size: 1rem;
       border: none;
-      border-radius: 6px;
-      font-weight: bold;
+      border-radius: 8px;
       cursor: pointer;
+      transition: background 0.3s;
+      user-select: none;
     }
 
     form button:hover {
-      background: #238ac9;
+      background: #074061;
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      padding: 30px;
-      background: var(--primary);
+      padding: 32px 16px;
+      color: #64748b;
       font-size: 14px;
-      color: var(--subtext);
+      background: #f1f5f9;
+      margin-top: 64px;
     }
 
-    .reveal {
+    /* Анимация появления */
+    .fade-in {
       opacity: 0;
       transform: translateY(40px);
-      transition: all 0.8s ease;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
-    .reveal.active {
+    .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Адаптив */
+    @media (max-width: 768px) {
+      .hero {
+        height: 360px;
+        padding: 0 24px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+        max-width: 100%;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      header {
+        padding: 16px 24px;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      .slide {
+        padding: 32px 24px;
+      }
+
+      #contact {
+        margin: 32px 16px;
+        padding: 48px 16px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <div class="logo">Academy</div>
     <nav>
       <a href="#who">Who We Are</a>
       <a href="#services">Services</a>
@@ -138,47 +325,60 @@
     </nav>
   </header>
 
-  <section id="who" class="reveal">
-    <h2>Who We Are</h2>
-    <p>
-      Founded in 1997 by a team of experienced operators and forward-thinking investors, Academy was established with the goal of uniting best-in-class brands, assets, and professionals in the field of integrated risk management.
-    </p>
-    <p>
-      Driven by a strong culture of compliance, integrity, and operational excellence, Academy has continually expanded its capabilities and global presence. Today, it operates as part of the Constellis family of companies — the largest and most diversified non-financial risk management organization in the United States.
-    </p>
-    <p>
-      Together with Constellis, Academy delivers comprehensive, mission-focused solutions to help clients navigate their most complex challenges — anytime, anywhere.
-    </p>
+  <section class="hero">
+    <h1>Who We Are</h1>
+    <p>Founded in 1997 by a team of experienced operators and forward-thinking investors, Academy unites best-in-class brands and professionals in integrated risk management.</p>
   </section>
 
-  <section id="services" class="reveal">
+  <section id="who" class="content fade-in">
+    <h2>Our Mission</h2>
+    <p>Driven by compliance, integrity, and operational excellence, Academy has expanded its capabilities globally as part of the Constellis family — the largest non-financial risk management organization in the US.</p>
+    <p>Together with Constellis, Academy delivers comprehensive, mission-focused solutions to help clients navigate their most complex challenges — anytime, anywhere.</p>
+  </section>
+
+  <section id="services" class="content fade-in">
     <h2>Services</h2>
-    <p>
-      Academy provides integrated risk management, security operations, crisis response, and training services tailored to mission-critical environments.
-    </p>
+    <p>Academy provides integrated risk management, security operations, crisis response, and training services tailored to mission-critical environments.</p>
   </section>
 
-  <section id="training" class="reveal">
+  <section id="training" class="content fade-in">
     <h2>Training</h2>
-    <p>
-      We offer a wide range of training programs for individuals and organizations in tactical readiness, crisis management, and operational leadership.
-    </p>
+    <p>We offer a wide range of training programs for individuals and organizations in tactical readiness, crisis management, and operational leadership.</p>
   </section>
 
-  <section id="careers" class="reveal">
+  <section id="careers" class="content fade-in">
     <h2>Careers</h2>
-    <p>
-      Join our team of dedicated professionals. We value experience, integrity, and a mission-first mindset. View open roles and career opportunities on our official job board.
-    </p>
+    <p>Join our team of dedicated professionals. We value experience, integrity, and a mission-first mindset. View open roles and career opportunities on our official job board.</p>
   </section>
 
-  <section id="contact" class="reveal">
+  <section class="slider fade-in" aria-label="Testimonials Slider">
+    <div class="slides" id="slides">
+      <div class="slide">
+        <h3>Trusted Partner</h3>
+        <p>"Academy and Constellis have been instrumental in providing reliable risk management solutions tailored to our operational needs."</p>
+      </div>
+      <div class="slide">
+        <h3>Excellence in Training</h3>
+        <p>"Their training programs elevated our team’s tactical readiness and crisis response capabilities significantly."</p>
+      </div>
+      <div class="slide">
+        <h3>Global Reach</h3>
+        <p>"With a global footprint and mission-focused approach, Academy delivers wherever and whenever required."</p>
+      </div>
+    </div>
+    <div class="slider-nav">
+      <button id="prev" aria-label="Previous Slide">&#8592;</button>
+      <button id="next" aria-label="Next Slide">&#8594;</button>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-in">
     <h2>Contact</h2>
     <form action="https://formspree.io/f/xjkrnqvw" method="POST">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="phone" placeholder="Phone" required>
-      <input type="text" name="telegram" placeholder="Telegram Username">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="phone" placeholder="Phone" required />
+      <input type="text" name="telegram" placeholder="Telegram Username" />
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send</button>
     </form>
@@ -188,19 +388,51 @@
     © 2025 Academy. All rights reserved.
   </footer>
 
-  <!-- Scroll Reveal Script -->
   <script>
-    const reveals = document.querySelectorAll('.reveal');
-    window.addEventListener('scroll', () => {
-      for (let el of reveals) {
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (top < windowHeight - 100) {
-          el.classList.add('active');
-        }
-      }
+    // Анимация появления секций при скролле
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -100px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
     });
-    window.dispatchEvent(new Event('scroll'));
+
+    // Слайдер
+    const slides = document.getElementById('slides');
+    const slideCount = slides.children.length;
+    let index = 0;
+
+    const showSlide = (idx) => {
+      if (idx < 0) idx = slideCount - 1;
+      if (idx >= slideCount) idx = 0;
+      slides.style.transform = `translateX(-${idx * 100}%)`;
+      index = idx;
+    };
+
+    document.getElementById('prev').addEventListener('click', () => {
+      showSlide(index - 1);
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      showSlide(index + 1);
+    });
+
+    // Автопереключение слайдов каждые 6 секунд
+    setInterval(() => {
+      showSlide(index + 1);
+    }, 6000);
   </script>
 </body>
 </html>
