@@ -84,7 +84,7 @@
       width: 100%;
       overflow: hidden;
       position: relative;
-      height: 600px; /* увеличил высоту */
+      height: 700px; /* увеличил высоту с 600px до 700px */
     }
 
     .slides {
@@ -97,7 +97,7 @@
     .slide {
       position: relative;
       min-width: 100%;
-      height: 600px; /* увеличил высоту */
+      height: 700px; /* увеличил высоту с 600px до 700px */
       overflow: hidden;
     }
 
@@ -112,12 +112,26 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: #fff;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 80%;
+      color: #1a202c; /* изменено на цвет текста как в "Our Mission" */
+      text-align: left; /* подравнивание как в блоке "Our Mission" */
+      background: none; /* убрал фон */
+      padding: 0;
+      border-radius: 0;
+      max-width: 700px;
+    }
+
+    /* Увеличение размера текста в слайдере */
+    .slide-content h3 {
+      font-size: 2.5rem; /* было около 1.5rem, увеличено */
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .slide-content p {
+      font-size: 1.25rem; /* было около 1rem */
+      line-height: 1.5;
+      color: #475569;
     }
 
     .slider-nav {
@@ -147,30 +161,29 @@
       background: #0c3c60;
     }
 
+    /* Блок "Who We Are" переделан под стиль "Our Mission" */
     .hero {
-      position: relative;
-      background: url('https://www.constellis.com/wp-content/uploads/2020/11/about-hero-bg.jpg') center center/cover no-repeat;
-      height: 480px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 48px;
-      color: #fff;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      max-width: 900px;
+      margin: 64px auto;
+      padding: 0 24px;
+      color: #475569;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
-      max-width: 600px;
+      font-size: 2rem;
+      color: #0c3c60;
       font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 20px;
+      border-bottom: 3px solid #0c3c60;
+      display: inline-block;
+      padding-bottom: 6px;
+      margin-bottom: 24px;
+      line-height: 1.2;
     }
 
     .hero p {
-      font-size: 1.25rem;
-      max-width: 600px;
-      font-weight: 400;
+      font-size: 1.125rem;
+      color: #475569;
+      margin-bottom: 16px;
     }
 
     section.content {
@@ -277,14 +290,31 @@
     }
 
     @media (max-width: 768px) {
+      /* уменьшение высоты слайдера пропорционально */
+      .slider {
+        height: 420px; /* примерно 60% от 700px */
+      }
+      .slide {
+        height: 420px;
+        padding: 32px 24px;
+      }
+
+      .slide-content h3 {
+        font-size: 1.7rem;
+      }
+
+      .slide-content p {
+        font-size: 1rem;
+      }
+
       .hero {
-        height: 360px;
-        padding: 0 24px;
+        max-width: 100%;
+        margin: 48px 16px;
+        padding: 0 16px;
       }
 
       .hero h1 {
-        font-size: 2.2rem;
-        max-width: 100%;
+        font-size: 1.5rem;
       }
 
       .hero p {
@@ -297,11 +327,6 @@
 
       nav {
         gap: 16px;
-      }
-
-      .slide {
-        height: 360px; /* уменьшаем пропорционально для мобильных */
-        padding: 32px 24px;
       }
 
       #contact {
