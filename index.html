@@ -4,16 +4,126 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Academy</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; scroll-behavior: smooth; }
-    header { background: #111; color: white; padding: 20px; position: sticky; top: 0; z-index: 10; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    section { padding: 60px 20px; max-width: 800px; margin: auto; }
-    h2 { color: #1a1a1a; }
-    form input, form textarea { width: 100%; padding: 10px; margin-bottom: 15px; font-size: 16px; }
-    form button { background: #111; color: white; padding: 10px 20px; border: none; cursor: pointer; }
-    footer { text-align: center; padding: 20px; background: #f0f0f0; font-size: 14px; }
-    .section-title { border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 30px; }
+    :root {
+      --bg: #0f1115;
+      --primary: #1f1f25;
+      --accent: #2d9cdb;
+      --text: #f0f0f0;
+      --subtext: #aaaaaa;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: var(--text);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      height: 2px;
+      background: var(--accent);
+      width: 0;
+      transition: 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 2em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 10px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      background: #1c1c24;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 12px;
+      color: var(--text);
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    form button {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #238ac9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: var(--primary);
+      font-size: 14px;
+      color: var(--subtext);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -28,8 +138,8 @@
     </nav>
   </header>
 
-  <section id="who">
-    <h2 class="section-title">Who We Are</h2>
+  <section id="who" class="reveal">
+    <h2>Who We Are</h2>
     <p>
       Founded in 1997 by a team of experienced operators and forward-thinking investors, Academy was established with the goal of uniting best-in-class brands, assets, and professionals in the field of integrated risk management.
     </p>
@@ -41,23 +151,29 @@
     </p>
   </section>
 
-  <section id="services">
-    <h2 class="section-title">Services</h2>
-    <p>Academy provides integrated risk management, security operations, crisis response, and training services tailored to mission-critical environments.</p>
+  <section id="services" class="reveal">
+    <h2>Services</h2>
+    <p>
+      Academy provides integrated risk management, security operations, crisis response, and training services tailored to mission-critical environments.
+    </p>
   </section>
 
-  <section id="training">
-    <h2 class="section-title">Training</h2>
-    <p>We offer a wide range of training programs for individuals and organizations in tactical readiness, crisis management, and operational leadership.</p>
+  <section id="training" class="reveal">
+    <h2>Training</h2>
+    <p>
+      We offer a wide range of training programs for individuals and organizations in tactical readiness, crisis management, and operational leadership.
+    </p>
   </section>
 
-  <section id="careers">
-    <h2 class="section-title">Careers</h2>
-    <p>Join our team of dedicated professionals. We value experience, integrity, and a mission-first mindset. View open roles and career opportunities on our official job board.</p>
+  <section id="careers" class="reveal">
+    <h2>Careers</h2>
+    <p>
+      Join our team of dedicated professionals. We value experience, integrity, and a mission-first mindset. View open roles and career opportunities on our official job board.
+    </p>
   </section>
 
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
+  <section id="contact" class="reveal">
+    <h2>Contact</h2>
     <form action="https://formspree.io/f/xjkrnqvw" method="POST">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -72,5 +188,19 @@
     © 2025 Academy. All rights reserved.
   </footer>
 
+  <!-- Scroll Reveal Script -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let el of reveals) {
+        const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) {
+          el.classList.add('active');
+        }
+      }
+    });
+    window.dispatchEvent(new Event('scroll'));
+  </script>
 </body>
 </html>
