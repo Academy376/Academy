@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academy</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; scroll-behavior: smooth; }
+    header { background: #111; color: white; padding: 20px; position: sticky; top: 0; z-index: 10; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    section { padding: 60px 20px; max-width: 800px; margin: auto; }
+    h2 { color: #1a1a1a; }
+    form input, form textarea { width: 100%; padding: 10px; margin-bottom: 15px; font-size: 16px; }
+    form button { background: #111; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+    footer { text-align: center; padding: 20px; background: #f0f0f0; font-size: 14px; }
+    .section-title { border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#who">Who We Are</a>
+      <a href="#services">Services</a>
+      <a href="#training">Training</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="who">
+    <h2 class="section-title">Who We Are</h2>
+    <p>
+      Founded in 1997 by a team of experienced operators and forward-thinking investors, Academy was established with the goal of uniting best-in-class brands, assets, and professionals in the field of integrated risk management.
+    </p>
+    <p>
+      Driven by a strong culture of compliance, integrity, and operational excellence, Academy has continually expanded its capabilities and global presence. Today, it operates as part of the Constellis family of companies — the largest and most diversified non-financial risk management organization in the United States.
+    </p>
+    <p>
+      Together with Constellis, Academy delivers comprehensive, mission-focused solutions to help clients navigate their most complex challenges — anytime, anywhere.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Services</h2>
+    <p>Academy provides integrated risk management, security operations, crisis response, and training services tailored to mission-critical environments.</p>
+  </section>
+
+  <section id="training">
+    <h2 class="section-title">Training</h2>
+    <p>We offer a wide range of training programs for individuals and organizations in tactical readiness, crisis management, and operational leadership.</p>
+  </section>
+
+  <section id="careers">
+    <h2 class="section-title">Careers</h2>
+    <p>Join our team of dedicated professionals. We value experience, integrity, and a mission-first mindset. View open roles and career opportunities on our official job board.</p>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <form action="https://formspree.io/f/xjkrnqvw" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="phone" placeholder="Phone" required>
+      <input type="text" name="telegram" placeholder="Telegram Username">
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Academy. All rights reserved.
+  </footer>
+
+</body>
+</html>
