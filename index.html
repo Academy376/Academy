@@ -149,29 +149,41 @@
 }
 
 .slide {
-  min-width: 100%;
-  height: 100%;
   position: relative;
+  width: 100%;
+  height: 480px; /* или другую фиксированную высоту */
+  overflow: hidden;
 }
 
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  object-fit: cover; /* или contain — если хочешь всё изображение */
 }
 
-    .slide h3 {
-      font-size: 1.75rem;
-      margin-bottom: 12px;
-      color: #0c3c60;
-    }
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  max-width: 80%;
+  background: rgba(0, 0, 0, 0.4); /* затемнение подложки */
+  border-radius: 12px;
+}
 
-    .slide p {
-      font-size: 1rem;
-      color: #4a5568;
-      line-height: 1.5;
-    }
+.slide-content h3 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.slide-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
 
     .slider-nav {
       position: absolute;
@@ -334,12 +346,14 @@
 
 <section class="slider fade-in" aria-label="Testimonials Slider">
     <div class="slides" id="slides">
-      <div class="slide">
-        <img src="images/11.jpg" alt="Photo 1" />
-        <h3>Trusted Partner</h3>
-        <p>"Academy and Constellis have been instrumental in providing reliable risk management solutions tailored to our operational needs."</p>
-        
-      </div>
+     <div class="slide">
+  <img src="images/1.jpg" alt="Photo 1" />
+  <div class="slide-content">
+    <h3>Trusted Partner</h3>
+    <p>"Academy and Constellis have been instrumental..."</p>
+  </div>
+</div>
+
       <div class="slide">
         <img src="images/2.jpg" alt="Photo 2" />
         <h3>Excellence in Training</h3>
