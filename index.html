@@ -90,6 +90,7 @@
       justify-content: center;
       padding: 0 48px;
       color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
 
     .hero h1 {
@@ -323,76 +324,74 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Who We Are</h1>
-      <p>Founded in 1997 by a team of experienced operators and forward-thinking investors, Academy unites best-in-class brands and professionals in integrated risk management.</p>
-    </section>
+  <section class="hero">
+    <h1>Who We Are</h1>
+    <p>Founded in 1997 by a team of experienced operators and forward-thinking investors, Academy unites best-in-class brands and professionals in integrated risk management.</p>
+  </section>
 
-    <section class="slider fade-in" aria-label="Testimonials">
-      <div class="slides" id="slides">
-        <div class="slide">
-          <img src="images/1.jpg" alt="Clients trust Academy" />
-          <div class="slide-content">
-            <h3>Trusted Partner</h3>
-            <p>"Academy and Constellis have been instrumental in providing reliable risk management solutions tailored to our operational needs."</p>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="images/2.jpg" alt="Training in action" />
-          <div class="slide-content">
-            <h3>Excellence in Training</h3>
-            <p>"Their training programs elevated our team’s tactical readiness and crisis response capabilities significantly."</p>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="images/3.jpg" alt="Global operations" />
-          <div class="slide-content">
-            <h3>Global Reach</h3>
-            <p>"With a global footprint and mission-focused approach, Academy delivers wherever and whenever required."</p>
-          </div>
+  <section id="who" class="content fade-in">
+    <h2>Our Mission</h2>
+    <p>Driven by compliance, integrity, and operational excellence, Academy has expanded its capabilities globally as part of the Constellis family — the largest non-financial risk management organization in the US.</p>
+    <p>Together with Constellis, Academy delivers comprehensive, mission-focused solutions to help clients navigate their most complex challenges — anytime, anywhere.</p>
+  </section>
+
+  <section class="slider fade-in" aria-label="Testimonials Slider">
+    <div class="slides" id="slides">
+      <div class="slide">
+        <img src="images/1.jpg" alt="Photo 1" />
+        <div class="slide-content">
+          <h3>Trusted Partner</h3>
+          <p>"Academy and Constellis have been instrumental in providing reliable risk management solutions tailored to our operational needs."</p>
         </div>
       </div>
-
-      <div class="slider-nav">
-        <button id="prev" aria-label="Previous Slide">&#8592;</button>
-        <button id="next" aria-label="Next Slide">&#8594;</button>
+      <div class="slide">
+        <img src="images/2.jpg" alt="Photo 2" />
+        <div class="slide-content">
+          <h3>Excellence in Training</h3>
+          <p>"Their training programs elevated our team’s tactical readiness and crisis response capabilities significantly."</p>
+        </div>
       </div>
-    </section>
+      <div class="slide">
+        <img src="images/3.jpg" alt="Photo 3" />
+        <div class="slide-content">
+          <h3>Global Reach</h3>
+          <p>"With a global footprint and mission-focused approach, Academy delivers wherever and whenever required."</p>
+        </div>
+      </div>
+    </div>
 
-    <section id="who" class="content fade-in">
-      <h2>Our Mission</h2>
-      <p>Driven by compliance, integrity, and operational excellence, Academy has expanded its capabilities globally as part of the Constellis family — the largest non-financial risk management organization in the US.</p>
-      <p>Together with Constellis, Academy delivers comprehensive, mission-focused solutions to help clients navigate their most complex challenges — anytime, anywhere.</p>
-    </section>
+    <div class="slider-nav">
+      <button id="prev" aria-label="Previous Slide">&#8592;</button>
+      <button id="next" aria-label="Next Slide">&#8594;</button>
+    </div>
+  </section>
 
-    <section id="services" class="content fade-in">
-      <h2>Services</h2>
-      <p>Academy provides integrated risk management, security operations, crisis response, and training services tailored to mission-critical environments.</p>
-    </section>
+  <section id="services" class="content fade-in">
+    <h2>Services</h2>
+    <p>Academy provides integrated risk management, security operations, crisis response, and training services tailored to mission-critical environments.</p>
+  </section>
 
-    <section id="training" class="content fade-in">
-      <h2>Training</h2>
-      <p>We offer a wide range of training programs for individuals and organizations in tactical readiness, crisis management, and operational leadership.</p>
-    </section>
+  <section id="training" class="content fade-in">
+    <h2>Training</h2>
+    <p>We offer a wide range of training programs for individuals and organizations in tactical readiness, crisis management, and operational leadership.</p>
+  </section>
 
-    <section id="careers" class="content fade-in">
-      <h2>Careers</h2>
-      <p>Join our team of dedicated professionals. We value experience, integrity, and a mission-first mindset. View open roles and career opportunities on our official job board.</p>
-    </section>
+  <section id="careers" class="content fade-in">
+    <h2>Careers</h2>
+    <p>Join our team of dedicated professionals. We value experience, integrity, and a mission-first mindset. View open roles and career opportunities on our official job board.</p>
+  </section>
 
-    <section id="contact" class="fade-in">
-      <h2>Contact</h2>
-      <form action="https://formspree.io/f/xjkrnqvw" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required aria-label="Full Name" />
-        <input type="email" name="email" placeholder="Email" required aria-label="Email" />
-        <input type="tel" name="phone" placeholder="Phone" required aria-label="Phone" />
-        <input type="text" name="telegram" placeholder="Telegram Username" aria-label="Telegram Username" />
-        <textarea name="message" rows="5" placeholder="Your Message" required aria-label="Message"></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
+  <section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/xjkrnqvw" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="phone" placeholder="Phone" required />
+      <input type="text" name="telegram" placeholder="Telegram Username" />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
   <footer>
     © 2025 Academy. All rights reserved.
