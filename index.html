@@ -132,27 +132,34 @@
     }
 
     /* Слайдер */
-    .slider {
+ .slider {
   width: 100vw;
-  margin: 48px 0;
+  height: 480px; /* Или сколько нужно */
+  margin: 48px auto;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  border-radius: 0; /* убери скругление, если нужно full-width */
+  box-shadow: none; /* можешь вернуть, если хочешь */
 }
 
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
 
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
 
-    .slide {
-      min-width: 100%;
-      padding: 40px 48px;
-      background: #fff;
-      box-sizing: border-box;
-      color: #1a202c;
-    }
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
     .slide h3 {
       font-size: 1.75rem;
