@@ -2,13 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Academi — Who We Are</title>
-
-  <!-- Google Fonts: Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academi - Private Security Company</title>
   <style>
+    /* Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -16,463 +13,157 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f9fafb;
-      color: #1a202c;
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
       line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
     }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 48px;
-      background: #fff;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-   .logo {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #0c3c60;
-  letter-spacing: 1px;
-  gap: 10px;
-}
-
-.logo img {
-  height: 32px;
-  width: auto;
-  display: block;
-}
-
-
-    nav {
-      display: flex;
-      gap: 32px;
-    }
-
-    nav a {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #334155;
-      position: relative;
-      padding-bottom: 4px;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #0c3c60;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      width: 0;
       background-color: #0c3c60;
-      transition: width 0.3s;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* Слайдер */
-    .slider {
-      width: 100vw;
-      height: 600px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .slides {
-      display: flex;
-      width: 300%; /* 3 слайда */
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-      min-width: 100vw;
-      height: 600px;
-      position: relative;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      user-select: none;
-      pointer-events: none;
-      filter: brightness(0.6); /* затемнить изображение для читаемости текста */
-      transition: filter 0.3s;
-    }
-
-    .slide-content {
-      position: absolute;
-      bottom: 40px;
-      left: 40px;
-      right: 10px; /* уменьшен отступ справа для расширения блока */
-      background: rgba(12, 60, 96, 0.7);
-      padding: 20px 30px;
-      border-radius: 10px;
       color: #fff;
-      max-width: 900px; /* увеличена ширина */
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.4);
-      font-weight: 600;
+      padding: 20px;
+      text-align: center;
     }
 
-    .slide-content h3 {
+    header h1 {
       font-size: 2rem;
-      margin-bottom: 12px;
-      line-height: 1.2;
-    }
-
-    .slide-content p {
-      font-size: 1.1rem;
-      line-height: 1.4;
-      max-height: 180px;
-      overflow-y: auto;
-      user-select: text;
-    }
-
-    /* При наведении на слайдер сделать изображение чуть ярче */
-    .slider:hover .slide img {
-      filter: brightness(0.8);
-    }
-
-    /* Блоки контента и fade-in */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .hero, section.content, #contact {
-      max-width: 900px;
-      margin: 64px auto;
-      padding: 0 24px;
-      color: #475569;
-    }
-
-    .hero h1,
-    section.content h2,
-    #contact h2 {
       font-weight: 700;
+    }
+
+    .hero, .photo-carousel, .content {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
       color: #0c3c60;
-      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* Карусель */
+    .photo-carousel {
+      margin-top: 20px;
+    }
+
+    .photo-carousel h2 {
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #0c3c60;
       border-bottom: 3px solid #0c3c60;
       display: inline-block;
       padding-bottom: 6px;
     }
 
-    .hero h1 {
-      font-size: 2rem;
-      line-height: 1.2;
-      color: #0c3c60;
-    }
-
-    .hero p,
-    section.content p {
-      font-size: 1.125rem;
-      margin-bottom: 16px;
-      color: #475569;
-    }
-
-    /* Форма обратной связи */
-    #contact {
-      background: #fff;
-      padding: 64px 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgb(0 0 0 / 0.05);
-    }
-
-    form {
+    .carousel-container {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
     }
 
-    form input,
-    form textarea {
-      padding: 14px 16px;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 1rem;
-      color: #1a202c;
-      resize: vertical;
-      transition: border-color 0.3s;
-      font-family: 'Inter', sans-serif;
+    .carousel {
+      display: flex;
+      gap: 16px;
     }
 
-    form input:focus,
-    form textarea:focus {
-      outline: none;
-      border-color: #0c3c60;
-      box-shadow: 0 0 6px #0c3c60aa;
+    .carousel img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
 
-    form button {
-      align-self: flex-start;
-      background: #0c3c60;
-      color: white;
-      padding: 14px 32px;
-      font-weight: 700;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-      user-select: none;
-    }
-
-    form button:hover {
-      background: #074061;
-    }
-
-    footer {
-      text-align: center;
-      padding: 32px 16px;
-      color: #64748b;
-      font-size: 14px;
-      background: #f1f5f9;
-      margin-top: 64px;
+    .carousel img:hover {
+      transform: scale(1.05);
     }
 
     @media (max-width: 768px) {
-      .slide-content {
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        max-width: 90vw;
-        padding: 16px 20px;
+      .carousel img {
+        width: 240px;
+        height: 160px;
       }
+    }
 
-      .slide-content h3 {
-        font-size: 1.4rem;
-      }
+    /* Анимация появления */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
 
-      .slide-content p {
-        font-size: 1rem;
-        max-height: 140px;
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
       }
+    }
 
-      header {
-        padding: 16px 24px;
-      }
+    footer {
+      background-color: #0c3c60;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
 
-      nav {
-        gap: 16px;
-      }
-
-      .hero, section.content, #contact {
-        margin: 48px 16px;
-        padding: 0 16px;
-      }
-
-      .hero h1 {
-        font-size: 1.5rem;
-      }
-
-      .slider {
-        height: 400px;
-      }
-
-      .slide {
-        height: 400px;
-      }
+    footer p {
+      margin: 0;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">
-  <img src="images/logo.png" alt="Academi Logo" />
-  <span>Academi</span>
-</div>
-
-    <nav>
-      <a href="#who">Who We Are</a>
-      <a href="#services">Services</a>
-      <a href="#training">Training</a>
-      <a href="#careers">Careers</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Academi</h1>
+    <p>Elite Private Security Solutions</p>
   </header>
 
-  <!-- Слайдер -->
-  <section class="slider fade-in" aria-label="Testimonials Slider" id="slider">
-    <div class="slides" id="slides">
-      <div class="slide">
-        <img src="images/2.jpg" alt="Photo 1" />
-        <div class="slide-content">
-          <h3>Securing Success at Home and Abroad</h3>
-          <p>In times of geo-political uncertainty, governments and commercial organizations around the world require specialized support capabilities to facilitate their critical operations. With cross-sector partnerships and expertise in multiagency coordination, Constellis draws on the depth of our program and risk management experience to help our customers conduct business safely and efficiently no matter where they are in the world.
-Our comprehensive and integrated solutions span national security, domestic and international operations, training and global support services.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="images/1.jpg" alt="Photo 2" />
-        <div class="slide-content">
-          <h3>Armed and Unarmed Physical Security Services for Government and Commercial Customers</h3>
-          <p>Personnel, facilities, data, networks, equipment and other assets are vulnerable to a number of attacks. Constellis is a trusted and experienced provider of security services. Our integrated security solutions range from uniformed protective services to high threat protection for government, corporate and nongovernmental customers. We deliver quality-driven, professional services to safeguard personnel, infrastructure, and other valuable assets and investments.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="images/3.jpg" alt="Photo 3" />
-        <div class="slide-content">
-          <h3>Safeguarding Critical National Installations from Nuclear Terrorism</h3>
-          <p>Constellis works directly with the U.S. Federal Government and commercial entities to safeguard our most critical assets and facilities, in support of the Department of Energy (DoE), Nuclear Regulatory Commission (NRC), National Aeronautical and Space Administration (NASA), and other national strategic assets and resources.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="images/4.jpg" alt="Photo 4" />
-        <div class="slide-content">
-          <h3>Comprehensive Risk Management Solutions to Protect Your Organization</h3>
-          <p>Academi provides professional risk management services from Fortune 500 companies to small businesses to help organizations prevent threats and eliminate vulnerabilities that reduce risks while enhancing organizational resilience.
-Constellis provides a comprehensive set of assessment and training services that is tailored to meet the security requirements of any organization. We provide thorough risk assessments to identify physical and operational vulnerabilities, and then develop integrated security programs with detailed contingency plans. Our specialists reduce risk from an “all hazards” perspective—analyzing your security conditions from multiple angles. Additionally, we work closely with our customers to allocate appropriate security resources and offer continuous assessment and customized training.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="images/5.jpg" alt="Photo 5" />
-        <div class="slide-content">
-          <h3>Special Event Staffing for Heightened Security</h3>
-          <p>From major sporting events to national political conventions, advanced planning and a strong security presence is necessary for ensuring a safe environment for its VIPs and attendees.
-Constellis specializes in security services for various public, private and U.S. Government events. This includes advanced threat assessment, planning and monitoring, large crowd control, and immediate crisis response. We staff special events, after-hours events, and augment existing staff during heightened security periods. These events range from public hearings, sporting events, large conventions and entertainment events.</p>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero fade-in">
+    <h1>Who We Are</h1>
+    <p>
+      Academi is a premier American private security company, renowned for its operational excellence, advanced training capabilities, and strategic global presence. Founded in 1997, Academi became widely known for its work in high-risk environments and has since evolved into a key part of the Constellis group — a leading provider of risk management and mission support services worldwide.
+      <br><br>
+      With decades of experience supporting U.S. government agencies, international organizations, and private sector clients, Academi offers tailored solutions in protective security, training, logistics, and crisis response.
+    </p>
+  </section>
+
+  <!-- Photo Carousel -->
+  <section class="photo-carousel fade-in" aria-label="Team Photo Highlights">
+    <h2>Our Global Operations</h2>
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="images/collage1.jpg" alt="Team in field" />
+        <img src="images/collage2.jpg" alt="Training facility" />
+        <img src="images/collage3.jpg" alt="Mission support" />
+        <img src="images/collage4.jpg" alt="Security team" />
+        <img src="images/collage5.jpg" alt="Equipment and logistics" />
       </div>
     </div>
   </section>
 
-  <!-- Hero -->
-  <section class="hero fade-in">
-    <h1>Who We Are</h1>
-    <p>Academi is a premier American private security company, renowned for its operational excellence, advanced training capabilities, and strategic global presence. Founded in 1997, Academi became widely known for its work in high-risk environments and has since evolved into a key part of the Constellis group — a leading provider of risk management and mission support services worldwide.
-
-With decades of experience supporting U.S. government agencies, international organizations, and private sector clients, Academi offers tailored solutions in protective security, training, logistics, and crisis response.</p>
-  </section>
-
-  <section id="who" class="content fade-in">
-    <h2>Our Mission</h2>
-    <p>At Academi, our mission is to deliver world-class security, training, and mission support services to those operating in the world’s most complex and high-risk environments. We are committed to supporting government agencies, international organizations, and private sector partners with integrity, precision, and professionalism.
-
-We believe that security is more than just protection — it is about enabling stability, preserving life, and supporting critical operations wherever they are needed. Every mission we undertake is driven by a deep responsibility to our clients, our personnel, and the values we uphold.
-
-Through rigorous training, operational excellence, and global experience, we provide the tools and people required to meet today’s evolving security challenges. Whether on the front lines or behind the scenes, we stand ready to serve those who serve others.
-
-Secure. Train. Support. This is our purpose — and our promise.</p>
-  </section>
-
-  <section id="services" class="content fade-in">
-    <h2>Services</h2>
-    <p>At Academi, we provide a comprehensive portfolio of mission-critical services designed to support stability, security, and operational success around the world. Our teams operate with precision, discretion, and professionalism in high-threat and sensitive environments.
-
-<br>⚫ Security Services
-We deliver armed and unarmed physical security for government, commercial, and non-governmental clients. From facility protection and executive security to high-risk deployments, our personnel are trained to operate in compliance with the highest operational and ethical standards.
-</br>
-    <br>
-⚫ Training & Capacity Building
-Academi offers advanced training programs for military, law enforcement, and private clients. Our curriculum includes tactical instruction, firearms training, counterterrorism operations, emergency response, and leadership development — all conducted at state-of-the-art training facilities or in-theater.
-</br>
-    <br>
-⚫ Mission Support & Logistics
-We provide end-to-end mission support including transportation, supply chain management, operational planning, and base life support. Whether deployed domestically or internationally, our logistics teams ensure clients have what they need, when and where they need it.
-</br>
-     <br>
-⚫ Risk Management & Consulting
-Our specialists help organizations assess threats, reduce risk, and develop strategic solutions to operate safely in volatile regions. We offer threat analysis, security audits, crisis response planning, and advisory services tailored to the client’s mission profile.
-</br>
-    <br>
-⚫ Intelligence Support
-Academi delivers timely and actionable intelligence to support operational readiness and informed decision-making. Our services include open-source analysis, human intelligence gathering, and situational awareness reporting.</p>
-  </br>
-  </section>
-
-  <section id="training" class="content fade-in">
-    <h2>Training</h2>
-    <p>We offer a wide range of training programs for government and commercial personnel in security, emergency response, and operational readiness.</p>
-  </section>
-
-  <section id="careers" class="content fade-in">
-    <h2>Careers</h2>
-    <p>Join Academi’s team of professionals dedicated to excellence in risk management and security solutions worldwide.</p>
-  </section>
-
-  <!-- Контактная форма -->
-  <section id="contact" class="fade-in" aria-label="Contact Form">
-    <h2>Contact</h2>
-    <form action="#" method="post" aria-label="Contact Form">
-      <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
-      <input type="email" name="email" placeholder="Your Email" required aria-required="true" />
-      <input type="tel" name="phone" placeholder="Your Phone" />
-      <input type="text" name="company" placeholder="Company" />
-      <textarea name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
-      <button type="submit">Send</button>
-    </form>
+  <!-- Additional Content -->
+  <section class="content fade-in">
+    <h2>Why Choose Academi?</h2>
+    <p>
+      We operate with integrity, discretion, and efficiency, providing unmatched security services in challenging environments. Our operatives are highly trained veterans with deep field experience, making Academi the trusted partner for missions where safety and precision matter most.
+    </p>
   </section>
 
   <footer>
-    &copy; 2025 Academi. All rights reserved.
+    <p>&copy; 2025 Academi. All rights reserved.</p>
   </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.fade-in').forEach(el => {
-        el.classList.add('visible');
-      });
-    });
-
-    const slides = document.getElementById('slides');
-    const totalSlides = slides.children.length;
-    let index = 0;
-    let autoSlideInterval;
-
-    function showSlide(i) {
-      index = i;
-      slides.style.transform = `translateX(-${index * 100}vw)`;
-    }
-
-    function nextSlide() {
-      index = (index + 1) % totalSlides;
-      showSlide(index);
-    }
-
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(nextSlide, 5000);
-    }
-
-    function stopAutoSlide() {
-      clearInterval(autoSlideInterval);
-    }
-
-    const slider = document.getElementById('slider');
-    slider.addEventListener('mouseenter', stopAutoSlide);
-    slider.addEventListener('mouseleave', startAutoSlide);
-
-    showSlide(index);
-    startAutoSlide();
-  </script>
 
 </body>
 </html>
