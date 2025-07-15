@@ -614,17 +614,23 @@ Your mission starts here.</p>
 
 
   
-  <!-- Контактная форма -->
   <section id="contact" class="fade-in" aria-label="Contact Form">
-    <h2>Contact</h2>
-    <form action="#" method="post" aria-label="Contact Form">
-      <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
-      <input type="email" name="email" placeholder="Your Email" required aria-required="true" />
-      <input type="tel" name="phone" placeholder="Your Phone" />
-      <input type="text" name="company" placeholder="Company" />
-      <textarea name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
-      <button type="submit">Send</button>
-    </form>
+  <h2>Contact</h2>
+  <form action="https://formspree.io/f/xjkrnqvw" method="POST" aria-label="Contact Form">
+    <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
+    <input type="email" name="email" placeholder="Your Email" required aria-required="true" />
+    <input type="tel" name="phone" placeholder="Your Phone" />
+    <input type="text" name="telegram" placeholder="Telegram Account" />
+    <textarea name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
+    
+    <!-- Optional: Subject line -->
+    <input type="hidden" name="_subject" value="New contact form submission">
+    
+    <!-- Optional: Redirect to a thank-you page -->
+    <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html" /> -->
+
+    <button type="submit">Send</button>
+  </form>
 <br>
 <br>
      <div style="flex: 0 0 320px;">
